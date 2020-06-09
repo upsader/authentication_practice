@@ -40,6 +40,7 @@ const userSchema = new mongoose.Schema ({
   secret: String
 });
 
+
 userSchema.plugin(passportLocalMongoose);
 userSchema.plugin(findOrCreate);
 
@@ -131,8 +132,8 @@ app.get("/secrets", function(req, res){
     } else {
       if (foundUsers){
         res.render('secrets', {usersWithSecrets: foundUsers});
+        }
       }
-    }
   });
 });
 
